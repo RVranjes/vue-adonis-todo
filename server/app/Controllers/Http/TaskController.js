@@ -15,7 +15,7 @@ class TaskController {
         return await project.tasks().fetch();
     }
 
-    async crate({ auth, request, paramas}) {
+    async create({ auth, request, paramas}) {
         const user = await auth.getUser();
         const { description } = request.all();
         const { id } = params;
@@ -28,8 +28,6 @@ class TaskController {
         await project.tasks().save(task); 
         return task;
     }
-
-
 }
 
 module.exports = TaskController
